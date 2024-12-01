@@ -1,6 +1,6 @@
 .winner{
-    color: greenyellow;
+    background-color: greenyellow;
 }
 .loser{
-    color : red;
+    background-color : red;
 }
