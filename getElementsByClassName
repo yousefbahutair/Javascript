@@ -1,0 +1,5 @@
+const b = document.getElementsByClassName('usa')// specifiction to pick the right input
+b.document.getElementsByTagName('input');
+for(let c of b){
+    console.log(`Password entered is ${c.value}`)
+}

@@ -1,5 +1,6 @@
-let arr = [
-    'abcdefgij','klmnopqrstvuwxyz'
+const fruits = [
+    'apple','orange','strawbarrey'
 ]
-const alphpet = [... arr[0],... arr[1]]
-console.log(alphpet)
+function fruitBox(a,o,s){
+    console.log(`${a} and ${o} are amazing, unlike ${s}`)
+}
