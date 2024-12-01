@@ -37,10 +37,8 @@ const matchesClassico = [
         }
     }
 ]
-
+const chart = (data) => {
 const ulParent = document.createElement('ul');
-const body = document.querySelector('body')
-body.appendChild(ulParent);
 for( match of matchesClassico){
      const ilMatch = document.createElement('li')
     const names = (match.homeTeam.goals > match.awayTeam.goals) ? 
@@ -56,6 +54,7 @@ for( match of matchesClassico){
     ilMatch.style.fontSize = '20px';
     ilMatch.style.textAlignLast = 'center';
     ulParent.appendChild(ilMatch);
-
-
 }
+ return ulParent;
+}
+document.body.appendChild(chart(matchesClassico));
