@@ -34,7 +34,7 @@ function moving(e) {
 
     if (isTouching(fish, worm)) {
         moveWorm();
-        count.innerText = `${counter++}`;
+        count.innerText = `${++counter}`;
         
     }
 }
