@@ -1,14 +1,22 @@
 const firstReq = new XMLHttpRequest();
-firstReq.addEventListener("load", function() {
-    const data = JSON.parse(this.response);
-    for(let plante of data){
-        console.log( plante.name );
-    }
-    console.log("it worked")
+firstReq.addEventListener('load',function(){
+    console.log('FIRST REQUEST WORKED!!');
+    const data = JSON.parse(this.responseText);
+    const filmURL = data.results[0].films[0];
+    const filmReq = new XMLHttpRequest();
+    filmReq.addEventListener('load', function(){
+        console.log('SECOND REQUEST WORKED!!');
+        const data2 = JSON.parse(this.responseText);
+        console.log(data2);
+    })
+filmReq.addEventListener('error',function(e){
+    console.log('ERORR!!', e);
 })
-firstReq.addEventListener("error", () => {
-    console.log("Error")
-})
-firstReq.open('GEt', 'https://github.com/yousefbahutair/Javascript/tree/master/Basics')
+filmReq.open('GET', filmURL);
+filmReq.send();
+});
+firstReq.addEventListener('error',(e) => {
+    console.log('ERORR!!!!!');
+});
+firstReq.open('GET','https://swapi.dev/api/planets/')
 firstReq.send();
-console.log('sent!')
